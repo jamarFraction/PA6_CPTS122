@@ -1,7 +1,11 @@
 #pragma once
 #include <iostream>
 #include <string>
+
 using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
 
 class BSTNode{
 
@@ -19,6 +23,9 @@ public:
 	//default constructor
 	BSTNode(string passedEnglishCharacter = "", string passedMorseCharacter = "", BSTNode *left = nullptr, BSTNode *right = nullptr);
 
+	//deafault deconstructor
+	~BSTNode();
+
 	//getter for the left Node
 	BSTNode *&GetLeftNode();
 
@@ -35,15 +42,12 @@ public:
 	string GetEnglishChar() const;
 
 	//getter for the EnglishCharacter code
-
 	string GetMorseCharacter() const;
 
 	//setter for the char
-
 	void SetEnglishCharacter(string passedChar);
 
 	//setter for the EnglishCharacter code
-
 	void SetMorseCharacter(string passedCharacterCode);
 
 };

@@ -17,6 +17,15 @@ BSTNode::BSTNode(string passedEnglishCharacter, string passedMorseCharacter, BST
 	rightNode = right; 
 }
 
+//deafult destructor
+BSTNode::~BSTNode() {
+
+	//delete the left, then right Node of the current Node
+	delete leftNode;
+	delete rightNode;
+
+}
+
 BSTNode*& BSTNode::GetLeftNode() {
 
 	//return a reference to a pointer to the left BSTNode

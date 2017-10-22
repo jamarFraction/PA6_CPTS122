@@ -11,40 +11,40 @@ private:
 	BSTNode *rightNode;
 
 	//private data members
-	char character;
-	string characterCode;
+	string EnglishCharacter;
+	string morseCharacter;
 
 public:
 
 	//default constructor
-	BSTNode(char passedCharacter = '\0', string passedCharacterCode = "", BSTNode *left = nullptr, BSTNode *right = nullptr);
+	BSTNode(string passedEnglishCharacter = "", string passedMorseCharacter = "", BSTNode *left = nullptr, BSTNode *right = nullptr);
 
 	//getter for the left Node
-	BSTNode *GetLeftNode() const;
+	BSTNode *&GetLeftNode();
 
 	//getter for the right Node
-	BSTNode *GetRightNode() const;
+	BSTNode *&GetRightNode();
 
 	//setter for the left Node
-	void SetLeft(BSTNode * const newNode);
+	void SetLeft(BSTNode *&newNode);
 
 	//setter for the right Node
-	void SetRight(BSTNode * const newNode);
+	void SetRight(BSTNode *&newNode);
 
 	//getter for the char
-	char GetChar() const;
+	string GetEnglishChar() const;
 
-	//getter for the character code
+	//getter for the EnglishCharacter code
 
-	string GetCharacterCode() const;
+	string GetMorseCharacter() const;
 
 	//setter for the char
 
-	void SetChar(char passedChar);
+	void SetEnglishCharacter(string passedChar);
 
-	//setter for the character code
+	//setter for the EnglishCharacter code
 
-	void SetCharacterCode(string passedCharacterCode);
+	void SetMorseCharacter(string passedCharacterCode);
 
 };
 

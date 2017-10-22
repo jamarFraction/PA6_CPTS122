@@ -6,8 +6,8 @@ int main(void) {
 	/*BSTNode *test = new BSTNode;
 	BSTNode *test2 = new BSTNode;
 
-	test2->SetChar('B');
-	test2->SetCharacterCode("-...");
+	test2->SetEnglishCharacter('B');
+	test2->SetMorseCharacter("-...");
 
 	test->SetLeft(test2);
 

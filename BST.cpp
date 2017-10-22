@@ -28,7 +28,7 @@ void BST::BuildTree(fstream &inputFile) {
 	//while the file still has data
 	while (inputFile) {
 
-		char englishChar = '\0';
+		string englishChar = "";
 		string morseChar = "";
 
 		//insert a line in to the tree
@@ -43,20 +43,52 @@ void BST::BuildTree(fstream &inputFile) {
 
 		//insert it into the tree
 
+		insert(this->rootNode, newNode);
+
 
 	}
 }
 
 
 
-BSTNode* BST::makeNode(char englishChar, string morseChar) {
+BSTNode* BST::makeNode(string englishChar, string morseChar) {
 
 	BSTNode *newNode = new BSTNode;
 
-	newNode->SetChar(englishChar);
-	newNode->SetCharacterCode(morseChar);
+	newNode->SetEnglishCharacter(englishChar);
+	newNode->SetMorseCharacter(morseChar);
 
 	return newNode;
+}
+
+void BST::insert(BSTNode *&newNode) {
+
+
+	insert(this->rootNode, newNode);
+	
+}
+
+void BST::insert(BSTNode *&pTree, BSTNode *&newNode) {
+
+	//base case
+	if (pTree == nullptr) {
+
+		pTree = newNode;
+
+	}
+	else if (newNode->GetEnglishChar() < pTree->GetEnglishChar()){
+
+		//pass the nodes to the left
+		insert((pTree)->GetLeftNode(), newNode);
+
+	}
+	else {
+
+		//pass to the right
+		insert(pTree->GetRightNode(), newNode);
+
+	}
+
 }
 
 //fstream & operator >> (fstream &lhs, BSTNode *&rhs) {

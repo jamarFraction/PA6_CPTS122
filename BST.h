@@ -9,6 +9,7 @@ class BST{
 public:
 	
 	BST(BSTNode *passedRoot = nullptr);
+	void insert(BSTNode *&newNode);
 		
 
 private:
@@ -16,7 +17,8 @@ private:
 	BSTNode *rootNode;
 
 	void BuildTree(fstream &inputFile);
-	BSTNode *makeNode(char englishChar, string morseChar);
+	BSTNode *makeNode(string englishChar, string morseChar);
+	void insert(BSTNode *&pTree, BSTNode *&newNode);
 	
 };
 

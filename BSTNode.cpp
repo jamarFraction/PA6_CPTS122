@@ -1,71 +1,71 @@
 #include "BSTNode.h"
 
 //defualt constructor
-BSTNode::BSTNode(char passedCharacter, string passedCharacterCode, BSTNode *left, BSTNode *right){
+BSTNode::BSTNode(string passedEnglishCharacter, string passedMorseCharacter, BSTNode *left, BSTNode *right){
 
 	//set the default values for the Node, see below for defaults:
-	//character = \0
-	//characterCode = ""
+	//EnglishCharacter = \0
+	//morseCharacter = ""
 	//leftNode = nullptr
 	//rightNode = nullptr
-	character = passedCharacter;
+	EnglishCharacter = passedEnglishCharacter;
 
-	characterCode = passedCharacterCode;
+	morseCharacter = passedMorseCharacter;
 
 	leftNode = left;
 
 	rightNode = right; 
 }
 
-BSTNode* BSTNode::GetLeftNode() const{
+BSTNode*& BSTNode::GetLeftNode() {
 
 	//return a reference to a pointer to the left BSTNode
 	return leftNode;
 
 }
 
-BSTNode* BSTNode::GetRightNode() const{
+BSTNode*& BSTNode::GetRightNode() {
 
 	//return a reference to a pointer to the right BSTNode
 	return rightNode;
 
 }
 
-void BSTNode::SetLeft(BSTNode * const newNode){
+void BSTNode::SetLeft(BSTNode *&newNode){
 
 	//set the left Node to the passed in pointer to a BSTNode
 	leftNode = newNode;
 
 }
 
-void BSTNode::SetRight(BSTNode * const newNode){
+void BSTNode::SetRight(BSTNode *&newNode){
 
 	//set the right Node to the passed in pointer to a BSTNode
 	rightNode = newNode;
 
 }
 
-char BSTNode::GetChar() const{
-	//return the Node's character
-	return character;
+string BSTNode::GetEnglishChar() const{
+	//return the Node's EnglishCharacter
+	return EnglishCharacter;
 }
 
-string BSTNode::GetCharacterCode() const{
-	//return the character code for this Node
-	return characterCode;
+string BSTNode::GetMorseCharacter() const{
+	//return the EnglishCharacter code for this Node
+	return morseCharacter;
 }
 
-void BSTNode::SetChar(char passedChar)
+void BSTNode::SetEnglishCharacter(string passedChar)
 {
-	//set the Node's character to the passed in character
-	character = passedChar;
+	//set the Node's EnglishCharacter to the passed in EnglishCharacter
+	EnglishCharacter = passedChar;
 
 }
 
-void BSTNode::SetCharacterCode(string passedCharacterCode){
+void BSTNode::SetMorseCharacter(string passedCharacterCode){
 
-	//set the Node's character code to the passed in code
-	characterCode = passedCharacterCode;
+	//set the Node's EnglishCharacter code to the passed in code
+	morseCharacter = passedCharacterCode;
 
 }
 

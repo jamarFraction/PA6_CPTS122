@@ -37,6 +37,19 @@ int main(void) {
 			//pause the screen
 			system("pause");
 		}
+		else if (option == 3) {
+
+			//clear the screen
+			system("cls");
+
+			//call the public function to print the tree in order 
+			newTree.convertTextFromFile();
+
+			//pause the screen
+			system("pause");
+			
+
+		}
 
 
 	} while (option != 4);

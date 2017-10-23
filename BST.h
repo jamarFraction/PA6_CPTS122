@@ -9,7 +9,7 @@ class BST{
 public:
 	
 	//Defualt constructor
-	BST(BSTNode *passedRoot = nullptr);
+	BST(BSTNode *passedRoot = nullptr, string passedEnglishText = "", string passedMorseText = "");
 	
 	//Default destructor
 	~BST();
@@ -21,20 +21,28 @@ public:
 	//Public version that calls the private version
 	void printinOrder();
 
+	//Public print by level order
 	void printLevelOrder();
 
-	void search(string targetCharacter);
+	//Public search function by character
+	void search(string &targetCharacter);
+
+	void convertTextFromFile();
 		
 
 private:
 	//pointer to the root Node
 	BSTNode *rootNode;
 
-	//Function called in the default constructor that pulls all the data from the file into the tree
-	void BuildTree(fstream &inputFile);
+	string englishText;
+
+	string morseText;
 
 	//Helper function that spits out Nodes 
 	BSTNode *makeNode(string englishChar, string morseChar);
+
+	//Function called in the default constructor that pulls all the data from the file into the tree
+	void BuildTree(fstream &inputFile);
 
 	//Private insert, Recursive function
 	void insert(BSTNode *&pTree, BSTNode *&newNode);
@@ -42,11 +50,21 @@ private:
 	//Print function that will print the tree in sorted order
 	void printinOrder(BSTNode *& pTree) const;
 
-	void search(BSTNode *&pTree, string &targetCharacter) const;
+	//Private search function, handles the printing of found/not found characters
+	void search(BSTNode *&pTree, string &targetCharacter);
 
+	//Private print by level order base function
 	void printLevelOrder(BSTNode *&pTree);
 
+	//Private print by level order extension function
 	void printGivenLevel(BSTNode *&pTree, int level);
+
+
+	string convertToEnglishFromFile(fstream &inputFile);
+
+
+	void convertToMorseFromEnglish(string &inputString);
+
 };
 
 

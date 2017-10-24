@@ -1,3 +1,10 @@
+/*******************************************************************************************
+* Programmer: Jamar Fraction                                                               *
+* Class: CptS 122, Fall  2017; Lab Section 05											   *
+* Programming Assignment: PA5															   *
+* Date: October 24, 2017                                                                   *
+* Description: This program fulfills the requirements for the sixth programming assignment *
+********************************************************************************************/
 #include "BST.h"
 #include "BSTNode.h"
 

@@ -1,3 +1,10 @@
+/*******************************************************************************************
+* Programmer: Jamar Fraction                                                               *
+* Class: CptS 122, Fall  2017; Lab Section 05											   *
+* Programming Assignment: PA5															   *
+* Date: October 24, 2017                                                                   *
+* Description: This program fulfills the requirements for the sixth programming assignment *
+********************************************************************************************/
 #include "BST.h"
 
 //default constructor
@@ -242,8 +249,9 @@ string BST::convertToEnglishFromFile(fstream &inputFile) {
 }
 
 void BST::convertToMorseFromEnglish(string &inputString) {
-
-	for (int i = 0; i < inputString.length(); i++) {
+	
+	//explanation for using size_t learned from https://stackoverflow.com/questions/8188401/c-warning-c4018-signed-unsigned-mismatch
+	for (std::size_t i = 0; i < inputString.length(); i++) {
 
 		string currentCharacter(1,inputString[i]);
 
